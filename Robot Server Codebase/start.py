@@ -172,9 +172,9 @@ def get_args():
 		"--blossom",
 		action="store",
 		type=str,
-		default="../Robot Control Codebase",
+		default="../blossom_public",
 		dest="ctrl_dir",
-		help="Blossom driver directory, where its 'start.py' located. Default to '../Robot Control Codebase'.",
+		help="Blossom driver directory, where its 'start.py' located. Default to '../blossom_public'.",
 	)
 	parser.add_argument(
 		"-s",

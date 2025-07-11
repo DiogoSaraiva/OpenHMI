@@ -28,11 +28,11 @@ To build the robot, you will need to assemble 1) robot skeleton; 2) wiring betwe
 
 # How to Calibrate the Motors:
 
-To calibrate the motors, you can click on "Robot Control Codebase @ 24fb527" folder in the repo, and it will bring you to the robot contol codebase located in the hrc2/blossom-public repo from cornell. The motor calibration script is located in hrc2/blossom-public/motor_calib.py.
+To calibrate the motors, you can click on "blossom_public" folder in the repo, and it will bring you to the robot contol codebase located in the hrc2/blossom-public repo from cornell. The motor calibration script is located in hrc2/blossom-public/motor_calib.py.
 
 # How to Control:
 
-To control the robot, you can click on "Robot Control Codebase @ 24fb527" folder in the repo, and it will bring you to the robot contol codebase located in the hrc2/blossom-public repo from cornell. More documentations and guide can be found in the README of the hrc2/blossom-public repo. 
+To control the robot, you can click on "blossom_public" folder in the repo, and it will bring you to the robot contol codebase located in the hrc2/blossom-public repo from cornell. More documentations and guide can be found in the README of the hrc2/blossom-public repo. 
 
 
 # How to Cite
