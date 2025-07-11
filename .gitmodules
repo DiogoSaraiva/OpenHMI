@@ -1,3 +1,4 @@
 [submodule "blossom_public"]
 	path = blossom_public
-	url = git@github.com:diogosaraiva/blossom-public.git
+	url = https://github.com/DiogoSaraiva/blossom-public.git
+	branch = main
