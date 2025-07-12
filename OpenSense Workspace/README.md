@@ -24,7 +24,7 @@ Usually, a standalone webcam hardware will also include a microphone.
 
 Internet connection and some hard disk space for downloading the software is also needed.
 
-Please run [OpenSense-Blossom Bridge](../Robot%20Server%20Codebase/README.md) (or Bridge in-short) and set it aside if you have not done it so.
+Please run [OpenSense-Blossom Bridge](../robot_server/README.md) (or Bridge in-short) and set it aside if you have not done it so.
 However, if the Bridge is not running, the following pipelines will still run without throwing errors, because HTTP request errors are silently discarded (see its python code later).
 So, it is OK to run OpenSense pipelines without the Bridge running aside.
 
