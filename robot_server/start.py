@@ -22,8 +22,15 @@ Item format is (seq_name, duration_in_seconds).
 def play_seq(proc, seq_name):
 	"""Send message to Blossom to play a sequence."""
 	print("Play Sequence:", seq_name)
-	proc.stdin.write("s\n")
-	proc.stdin.write("{0}\n".format(seq_name))
+	if proc.poll() is not None:
+		print("Blossom process is dead.")
+		return
+	try:
+		proc.stdin.write("s\n")
+		proc.stdin.write("{0}\n".format(seq_name))
+		proc.stdin.flush()
+	except BrokenPipeError:
+		print("BrokenPipe: It wasn't possible to communicate with Blossom.")
 
 def quit(proc):
 	"""Send message to Blossom to exit."""
