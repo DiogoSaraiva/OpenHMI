@@ -7,6 +7,7 @@ import sys
 import argparse
 from datetime import datetime
 from BlossomServer import BlossomServer
+import os
 
 PATH_MAPPINGS = {
 	"/none" : ("reset", 0.5),
@@ -83,12 +84,20 @@ def seq_cb(proc, debouncing = None):
 
 def run(args):
 	"""Run Blossom and server."""
-	exe = re.split(r"\s+", args.python_exe) # Simple solution, will yield wrong results if whitespaces are quoted
+
+	import sys
+	exe = [sys.executable]
+
+	base_dir = os.path.dirname(__file__)
+	blossom_dir = os.path.normpath(os.path.join(base_dir, args.ctrl_dir))
+	blossom_start = os.path.join(blossom_dir, "start.py")
+
 	process_args = [
 		*exe,
-		"{0}/start.py".format(args.ctrl_dir), 
-		"-b", # We do not use its Web UI
+		blossom_start,
+		"-b"
 	]
+
 	with subprocess.Popen(
 		process_args,
 		cwd=args.ctrl_dir,
@@ -179,7 +188,7 @@ def get_args():
 		"--blossom",
 		action="store",
 		type=str,
-		default="../blossom_public",
+		default="../../blossom_public",
 		dest="ctrl_dir",
 		help="Blossom driver directory, where its 'start.py' located. Default to '../blossom_public'.",
 	)
@@ -194,6 +203,7 @@ def get_args():
 		# For simplicity, we are not detecting Blossom's state from its output.
 	)
 	args = parser.parse_args()
+
 	return args
 
 def main():
